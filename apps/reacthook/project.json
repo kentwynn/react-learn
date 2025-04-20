@@ -1,0 +1,39 @@
+{
+  "name": "reacthook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/reacthook/src",
+  "targets": {
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["dist/apps/reacthook"],
+      "options": {
+        "outputPath": "dist/apps/reacthook",
+        "root": "apps/reacthook"
+      }
+    },
+    "serve": {
+      "executor": "@nx/next:server",
+      "options": {
+        "buildTarget": "reacthook:build",
+        "dev": true
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/reacthook/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["coverage/apps/reacthook"],
+      "options": {
+        "jestConfig": "apps/reacthook/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
