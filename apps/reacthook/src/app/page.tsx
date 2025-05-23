@@ -165,6 +165,15 @@ const hooks = [
    * Best for: improving hook debugging experience in development.
    */
   { name: 'useDebugValue', path: 'use-debug-value' },
+  /**
+   * 💡 useFetch
+   *
+   * Custom hook for fetching data from a URL.
+   * Handles loading, error, and data states.
+   *
+   * Best for: API calls, quick data loads, isolated fetching logic.
+   */
+  { name: 'useFetch', path: 'use-fetch' },
 ];
 
 export default function Index() {
